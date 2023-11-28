@@ -49,7 +49,7 @@ SELECT CASE                                                                     
 FROM Customers_JSON
 
 
-UPDATE Customers_JSON                                                                     -- Updating Column & Filling Minutes As Word Inside Column Minutes
+UPDATE Customers_JSON                                                                     -- Updating Column Minutes & Filling Minutes As Word Inside Column Minutes
 SET Minutes =
   (SELECT CASE
               WHEN Product_Browsing_Time > 0 THEN 'Minutes'
@@ -62,6 +62,7 @@ ALTER TABLE Customers_JSON                                                      
 ADD Time_format TIME
 
 
+	
 SELECT CASE                                                                               -- Validating Query
            WHEN cast(Product_Browsing_Time AS varchar(20)) = 60 THEN '00:59:00'
            ELSE '00:' + cast(Product_Browsing_Time AS varchar(20)) + ':00'
@@ -69,12 +70,15 @@ SELECT CASE                                                                     
 FROM Customers_JSON
 
 
-UPDATE Customers_JSON                                                                     -- Updating Column & Adjusting Time and Converting Dataype "VARCHAR" To "TIME" Using "TRY_CONVERT"
+
+	
+UPDATE Customers_JSON                                                                     -- Updating Time_format Column & Adjusting Time and Converting Dataype "VARCHAR" To "TIME" Using "TRY_CONVERT"
 SET Time_format = TRY_CONVERT(TIME, CASE
                                         WHEN cast(Product_Browsing_Time AS varchar(20)) = 60 THEN '00:59:00'
                                         ELSE '00:' + cast(Product_Browsing_Time AS varchar(20)) + ':00'
                                     END)
 
+	
 
 UPDATE Customers_JSON                                                                    -- Adjusting Time For Product_Browsing_Time Column
 SET Product_Browsing_Time = (CASE
@@ -84,7 +88,7 @@ SET Product_Browsing_Time = (CASE
 
 
 
-							                                                             -- Trimming the Entire Table Customers.csv
+							                                  -- Trimming the Entire Table Customers.csv
 UPDATE Customers
 SET Gender = trim(Gender)
 
@@ -97,6 +101,7 @@ SET Device_Type = trim(Device_Type)
 
 
 
+	
 
 --                 ** Answering Questions  **
 
@@ -175,6 +180,7 @@ ORDER BY Total_Purchases DESC
 
 
 -- Top 3 Devices with most purchases by location if tie then keep it
+	
 WITH devices AS
   (SELECT Location,
           Device_Type,
@@ -202,4 +208,4 @@ FROM Customers
 GROUP BY Device_Type
 
 
-
+                                                       -- ** end **--
