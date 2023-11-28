@@ -1,4 +1,4 @@
-## Shopclues_SQL_Queries
+## Shopclues_SQL_Queries_Overview
 $${\color{lightgreen}Overview \space Of \space Code:}$$
 
 <li>Converted JSON file to CSV in SSMS</li> 
