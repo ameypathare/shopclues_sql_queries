@@ -1,5 +1,5 @@
 ## Shopclues_SQL_Queries_Overview
-$${\color{lightgreen}Overview \space Of \space Code:}$$
+$${Overview \space Of \space Code:}$$
 
 <li>Converted JSON file to CSV in SSMS</li> 
 <br>
@@ -20,7 +20,7 @@ $${\color{lightgreen}Overview \space Of \space Code:}$$
 
 <li>Answered the sql queries to get meaningful insights in POWER BI</li> 
     <ul type = "circle">
-    ${\color{red}Window \space function \space used:}$
+    ${Window \space function \space used:}$
      <li>CTE()</li>
      <li>ROW_NUMBER()</li>
      <li>DENSE_RANK()</li>
@@ -29,7 +29,7 @@ $${\color{lightgreen}Overview \space Of \space Code:}$$
   <br>
   
    <ul type = "circle">
- ${\color{red}Aggregrate \space function \space used}$
+ ${Aggregrate \space function \space used}$
    <li>SUM()</li>
    <li>AVG()</li>
    <li>COUNT()</li>
@@ -37,12 +37,12 @@ $${\color{lightgreen}Overview \space Of \space Code:}$$
 <br>
 
    <ul type = "circle">
-  ${\color{red}Conditional \space Expression \space used}$
+  ${Conditional \space Expression \space used}$
    <li>CASE WHEN</li>
    </ul>
   <br>
   
   <ul type = "circle">
-  ${\color{red}To \space filter \space conditions}$
+  ${To \space filter \space conditions}$
    <li>WHERE</li>
   </ul>
